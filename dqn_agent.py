@@ -2,7 +2,8 @@ import numpy as np
 import random
 from collections import namedtuple, deque
 
-from model import QNetworkDeeper as QNetwork
+from model import QNetwork as QNetwork
+from model import QNetworkDeeper as QNetworkDeeper
 
 import torch
 import torch.nn.functional as F
@@ -20,7 +21,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 class Agent():
     """Interacts with and learns from the environment."""
 
-    def __init__(self, state_size, action_size, seed):
+    def __init__(self, state_size, action_size, seed, model="flat"):
         """Initialize an Agent object.
         
         Params
@@ -34,8 +35,13 @@ class Agent():
         self.seed = random.seed(seed)
 
         # Q-Network
-        self.qnetwork_local = QNetwork(state_size, action_size, seed).to(device)
-        self.qnetwork_target = QNetwork(state_size, action_size, seed).to(device)
+        if model=="flat":
+            self.qnetwork_local = QNetwork(state_size, action_size, seed).to(device)
+            self.qnetwork_target = QNetwork(state_size, action_size, seed).to(device)
+        if model=="deep":
+            self.qnetwork_local = QNetworkDeeper(state_size, action_size, seed).to(device)
+            self.qnetwork_target = QNetworkDeeper(state_size, action_size, seed).to(device)
+        
         self.optimizer = optim.Adam(self.qnetwork_local.parameters(), lr=LR)
 
         # Replay memory
