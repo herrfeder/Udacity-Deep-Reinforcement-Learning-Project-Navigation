@@ -26,3 +26,16 @@ You can find the original instructions here: https://github.com/udacity/Value-ba
 3. Install a Python 3.6 Environment on your host (the Unity Environment will only work with Python 3.6)
 4. Create a virtual environment:`virtualenv -p /usr/bin/python3.6 your_environment` and activate it `source your_environment/bin/activate`
 5. (When in activated virtual environment) Install the necessary packages from the requirements in this repo: `pip install -r requirements.txt`  
+
+### Included Files
+
+  * `images/`: includes all gifs and plots
+  * `Navigation_Solution.ipynb`: shows my approach to solve this project
+  * `Report.ipynb`: static result of the work in Navigation_Solution.ipynb
+  * `dqn_agent.py`: includes the implementation of the Deep Q Network Agent (mostly based on the Udacity Code)
+  * `model.py`: holds the implementation of the Deep Learning models that will act as the local/target Q Network training models
+  * `simple_dqn_*`: are model checkpoints for four different models with different settings
+    * `simple_dqn_six_layers_0990.pth`: QNetwork with five hidden layers and Epsilon Decay on 0.990
+    * `simple_dqn_six_layers_0999.pth`: QNetwork with five hidden layers and Epsilon Decay on 0.999
+    * `simple_dqn_three_layers_0990.pth`: QNetwork with two hidden layers and Epsilon Decay on 0.990
+    * `simple_dqn_three_layers_0999.pth`: QNetwork with two hidden layers and Epsilon Decay on 0.999
