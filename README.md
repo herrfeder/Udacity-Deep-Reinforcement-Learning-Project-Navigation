@@ -1,6 +1,9 @@
 [//]: # (Image References)
 
-[image1]: /images/agent.gif "Trained Agent"
+<div>
+<img src="images/agent.gif" width="500"/>
+</div>
+
 
 # Project 1: Navigation
 
