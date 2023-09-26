@@ -10,7 +10,15 @@
 ### Introduction
 
 This repository shows my Work on the first Project Navigation in the Udacity Deep Reinforcement Learning Nanodegree.
-As you can see in the GIF above, it consists of an environment, where you have to collect yellow bananas to get positive rewards and avoid blue bananas as they would give negative rewards.
+As you can see in the GIF above, it consists of an environment, where you have to collect yellow bananas to get positive rewards (+1 per collected banana) and avoid blue bananas as they would give negative rewards (-1 per collected banana).
+
+The state space has 37 dimensions and contains the agent's velocity, along with ray-based perception of objects around agent's forward direction.  Given this information, the agent has to learn how to best select actions.  Four discrete actions are available, corresponding to:
+- **`0`** - move forward.
+- **`1`** - move backward.
+- **`2`** - turn left.
+- **`3`** - turn right.
+
+The task is episodic, and in order to solve the environment, your agent must get an average score of +13 over 100 consecutive episodes.
 
 You can find the original instructions here: https://github.com/udacity/Value-based-methods/tree/main/p1_navigation
 
